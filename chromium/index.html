@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Private APIs Usage in iOS-Blink</title>
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+        .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+          font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+          font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-kfmx{background-color:#dedede;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+        .tg .tg-07lr{background-color:#f0f0f0;border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .horizontal-list {list-style:none;padding: 0;margin: 0;overflow: hidden;}
+        .horizontal-list li{float:left;margin-right: 10px;}
+    </style>
+</head>
+
+<body>
+    <h1>iOS Private APIs Usage in iOS-Blink</h1>
+
+    <p><strong>Chromium Version:</strong> 120.0.6099.0</p>
+    <p><strong>iOS SDK Version:</strong> 16.4</p>
+
+    <p><strong>Dependent Frameworks in iOS-Blink:</strong></p>
+    <ul class="horizontal-list">
+        <li>AVFAudio</li>
+        <li>AVFoundation</li>
+        <li>AudioToolbox</li>
+        <li>CFNetwork</li>
+        <li>CoreAudio</li>
+        <li>CoreBluetooth</li>
+        <li>CoreFoundation</li>
+        <li>CoreGraphics</li>
+        <li>CoreLocation</li>
+        <li>CoreMIDI</li>
+        <li>CoreMedia</li>
+        <li>CoreTelephony</li>
+        <li>CoreText</li>
+        <li>CoreVideo</li>
+        <li>Foundation</li>
+        <li>GameController</li>
+        <li>IOKit</li>
+        <li>IOSurface</li>
+        <li>ImageIO</li>
+        <li>Metal</li>
+        <li>MetalKit</li>
+        <li>MobileCoreServices</li>
+        <li>OpenGLES</li>
+        <li>QuartzCore</li>
+        <li>Security</li>
+        <li>SystemConfiguration</li>
+        <li>UIKit</li>
+        <li>UniformTypeIdentifiers</li>
+        <li>VideoToolbox</li>
+    </ul></br>
+
+    <table class="tg">
+        <thead>
+            <tr>
+                <th class="tg-kfmx">class</th>
+                <th class="tg-kfmx">method</th>
+                <th class="tg-kfmx">code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-07lr">6</td>
+                <td class="tg-07lr" colspan="2">15 private APIs detected</td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="1">UIContextMenuInteraction</td>
+                <td class="tg-0pky">_presentMenuAtLocation:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:content/browser/renderer_host/web_menu_runner_ios.mm;l=10" target="_blank" rel="noopener noreferrer">- (void)_presentMenuAtLocation:(CGPoint)location;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="4">CAContext</td>
+                <td class="tg-0pky">remoteContextWithOptions:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=47" target="_blank" rel="noopener noreferrer">+ (instancetype)remoteContextWithOptions:(NSDictionary*)optionsDict;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">setLayer:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">layer</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">contextId</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=49" target="_blank" rel="noopener noreferrer">@property(readonly) CAContextID contextId;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="1">UIApplication</td>
+                <td class="tg-0pky">_terminateWithStatus:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/testing/earl_grey/base_earl_grey_test_case_app_interface.mm;l=15" target="_blank" rel="noopener noreferrer">- (void)_terminateWithStatus:(int)status;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="2">CALayerHost</td>
+                <td class="tg-0pky">setContextId:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">contextId</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="2">CALayer</td>
+                <td class="tg-0pky">setContentsChanged</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/accelerated_widget_mac/display_ca_layer_tree.mm;l=21" target="_blank" rel="noopener noreferrer">- (void)setContentsChanged;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">setWantsExtendedDynamicRangeContent:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/accelerated_widget_mac/ca_layer_tree_unittest_mac.mm;l=22" target="_blank" rel="noopener noreferrer">@property BOOL wantsExtendedDynamicRangeContent;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky" rowspan="5">UIKeyboardImpl</td>
+                <td class="tg-0pky">sharedInstance</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=150" target="_blank" rel="noopener noreferrer">+ (instancetype)sharedInstance;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">setAutomaticMinimizationEnabled:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=181" target="_blank" rel="noopener noreferrer">- (void)setAutomaticMinimizationEnabled:(BOOL)enabled;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">setDelegate:</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=193" target="_blank" rel="noopener noreferrer">- (void)setDelegate:(id)delegate;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">hideKeyboard</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=200" target="_blank" rel="noopener noreferrer">- (void)hideKeyboard;</a></td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">delegate</td>
+                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=186" target="_blank" rel="noopener noreferrer">- (id)delegate;</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
