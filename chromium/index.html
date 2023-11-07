@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iOS Private APIs Usage in iOS-Blink</title>
     <style type="text/css">
-        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;width: 100%;table-layout: fixed;}
+        .col1 {width: 20%; word-wrap: break-word;word-break: break-word;}
+        .col2 {width: 30%; word-wrap: break-word;word-break: break-word;}
+        .col3 {width: 50%; word-wrap: break-word;word-break: break-word;}
         .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
           font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
         .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
@@ -22,8 +25,8 @@
 <body>
     <h1>iOS Private APIs Usage in iOS-Blink</h1>
 
-    <p><strong>Chromium Version:</strong> 120.0.6099.0</p>
-    <p><strong>iOS SDK Version:</strong> 16.4</p>
+    <p><strong>iOS-Blink Version:</strong> 119.0.6045.9</p>
+    <p><strong>iOS SDK Version:</strong> 17.0</p>
 
     <p><strong>Dependent Frameworks in iOS-Blink:</strong></p>
     <ul class="horizontal-list">
@@ -61,81 +64,77 @@
     <table class="tg">
         <thead>
             <tr>
-                <th class="tg-kfmx">class</th>
-                <th class="tg-kfmx">method</th>
-                <th class="tg-kfmx">code</th>
+                <th class="tg-kfmx col1">class</th>
+                <th class="tg-kfmx col2">method</th>
+                <th class="tg-kfmx col3">code</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td class="tg-07lr">6</td>
-                <td class="tg-07lr" colspan="2">15 private APIs detected</td>
+                <td class="tg-07lr" colspan="2">14 private APIs detected</td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="1">UIContextMenuInteraction</td>
-                <td class="tg-0pky">_presentMenuAtLocation:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:content/browser/renderer_host/web_menu_runner_ios.mm;l=10" target="_blank" rel="noopener noreferrer">- (void)_presentMenuAtLocation:(CGPoint)location;</a></td>
+                <td class="tg-0pky col1" rowspan="2">CALayerHost</td>
+                <td class="tg-0pky col2">setContextId:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="4">CAContext</td>
-                <td class="tg-0pky">remoteContextWithOptions:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=47" target="_blank" rel="noopener noreferrer">+ (instancetype)remoteContextWithOptions:(NSDictionary*)optionsDict;</a></td>
+                <td class="tg-0pky col2">contextId</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">setLayer:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
+                <td class="tg-0pky col1" rowspan="1">CALayer</td>
+                <td class="tg-0pky col2">setContentsChanged</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/accelerated_widget_mac/display_ca_layer_tree.mm;l=21" target="_blank" rel="noopener noreferrer">- (void)setContentsChanged;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">layer</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
+                <td class="tg-0pky col1" rowspan="5">UIKeyboardImpl</td>
+                <td class="tg-0pky col2">sharedInstance</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=150" target="_blank" rel="noopener noreferrer">+ (instancetype)sharedInstance;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">contextId</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=49" target="_blank" rel="noopener noreferrer">@property(readonly) CAContextID contextId;</a></td>
+                <td class="tg-0pky col2">setAutomaticMinimizationEnabled:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=181" target="_blank" rel="noopener noreferrer">- (void)setAutomaticMinimizationEnabled:(BOOL)enabled;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="1">UIApplication</td>
-                <td class="tg-0pky">_terminateWithStatus:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/testing/earl_grey/base_earl_grey_test_case_app_interface.mm;l=15" target="_blank" rel="noopener noreferrer">- (void)_terminateWithStatus:(int)status;</a></td>
+                <td class="tg-0pky col2">setDelegate:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=193" target="_blank" rel="noopener noreferrer">- (void)setDelegate:(id)delegate;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="2">CALayerHost</td>
-                <td class="tg-0pky">setContextId:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
+                <td class="tg-0pky col2">hideKeyboard</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=200" target="_blank" rel="noopener noreferrer">- (void)hideKeyboard;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">contextId</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/base/cocoa/remote_layer_api.h;l=59" target="_blank" rel="noopener noreferrer">@property CAContextID contextId;</a></td>
+                <td class="tg-0pky col2">delegate</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=186" target="_blank" rel="noopener noreferrer">- (id)delegate;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="2">CALayer</td>
-                <td class="tg-0pky">setContentsChanged</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/accelerated_widget_mac/display_ca_layer_tree.mm;l=21" target="_blank" rel="noopener noreferrer">- (void)setContentsChanged;</a></td>
+                <td class="tg-0pky col1" rowspan="1">UIApplication</td>
+                <td class="tg-0pky col2">_terminateWithStatus:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ios/testing/earl_grey/base_earl_grey_test_case_app_interface.mm;l=15" target="_blank" rel="noopener noreferrer">- (void)_terminateWithStatus:(int)status;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">setWantsExtendedDynamicRangeContent:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/accelerated_widget_mac/ca_layer_tree_unittest_mac.mm;l=22" target="_blank" rel="noopener noreferrer">@property BOOL wantsExtendedDynamicRangeContent;</a></td>
+                <td class="tg-0pky col1" rowspan="1">UIContextMenuInteraction</td>
+                <td class="tg-0pky col2">_presentMenuAtLocation:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:content/browser/renderer_host/web_menu_runner_ios.mm;l=10" target="_blank" rel="noopener noreferrer">- (void)_presentMenuAtLocation:(CGPoint)location;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky" rowspan="5">UIKeyboardImpl</td>
-                <td class="tg-0pky">sharedInstance</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=150" target="_blank" rel="noopener noreferrer">+ (instancetype)sharedInstance;</a></td>
+                <td class="tg-0pky col1" rowspan="4">CAContext</td>
+                <td class="tg-0pky col2">remoteContextWithOptions:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=47" target="_blank" rel="noopener noreferrer">+ (instancetype)remoteContextWithOptions:(NSDictionary*)optionsDict;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">setAutomaticMinimizationEnabled:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=181" target="_blank" rel="noopener noreferrer">- (void)setAutomaticMinimizationEnabled:(BOOL)enabled;</a></td>
+                <td class="tg-0pky col2">setLayer:</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">setDelegate:</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=193" target="_blank" rel="noopener noreferrer">- (void)setDelegate:(id)delegate;</a></td>
+                <td class="tg-0pky col2">layer</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=50" target="_blank" rel="noopener noreferrer">@property(retain) CALayer *layer;</a></td>
             </tr>
             <tr>
-                <td class="tg-0pky">hideKeyboard</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=200" target="_blank" rel="noopener noreferrer">- (void)hideKeyboard;</a></td>
-            </tr>
-            <tr>
-                <td class="tg-0pky">delegate</td>
-                <td class="tg-0pky"><a href="https://source.chromium.org/chromium/chromium/src/+/main:ios/third_party/earl_grey2/src/CommonLib/GREYAppleInternals.h;l=186" target="_blank" rel="noopener noreferrer">- (id)delegate;</a></td>
+                <td class="tg-0pky col2">contextId</td>
+                <td class="tg-0pky col3"><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/119.0.6045.9:ui/base/cocoa/remote_layer_api.h;l=49" target="_blank" rel="noopener noreferrer">@property(readonly) CAContextID contextId;</a></td>
             </tr>
         </tbody>
     </table>
